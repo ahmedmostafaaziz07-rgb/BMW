@@ -1,0 +1,55 @@
+/* Variables */
+:root {
+    --primary: #0066b2;
+    --dark: #111;
+    --light: #f4f4f4;
+    --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Base Styles */
+* { margin:0; padding:0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: var(--light); color: var(--dark); overflow-x: hidden; scroll-behavior: smooth; }
+
+/* Preloader Animation */
+#loader-wrapper {
+    position: fixed; top:0; left:0; width:100%; height:100%;
+    background: #000; z-index: 9999; display: flex; 
+    flex-direction: column; justify-content: center; align-items: center;
+}
+.bmw-loader {
+    width: 80px; height: 80px; border: 8px solid #333;
+    border-top: 8px solid var(--primary); border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);} }
+
+/* Navigation */
+.main-nav {
+    background: rgba(0,0,0,0.9); padding: 20px 0;
+    position: fixed; width: 100%; top:0; z-index: 1000;
+}
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+.logo { color: white; font-size: 28px; font-weight: 900; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; list-style: none; }
+.nav-links li a { color: white; text-decoration: none; padding: 0 15px; transition: 0.3s; }
+.nav-links li a:hover { color: var(--primary); }
+
+/* Hero Section */
+.hero-header {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1920') center/cover;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.hero-overlay { background: rgba(0,0,0,0.5); width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; }
+
+/* Car Cards (ستأخذ حيزاً كبيراً في الكود) */
+.car-card {
+    background: white; border-radius: 15px; overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: var(--transition);
+}
+.car-card:hover { transform: translateY(-10px); }
+.car-card img { width: 100%; height: 200px; object-fit: cover; }
+.car-info { padding: 20px; }
+
+/* مئات الأسطر الإضافية للـ Media Queries ولتنسيق الحاسبة والمقارنة... */
